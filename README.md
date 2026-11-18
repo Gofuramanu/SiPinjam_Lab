@@ -1,59 +1,103 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🔬 Sistem Informasi Manajemen Peminjaman Alat Laboratorium (SIPINJAM LAB)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Aplikasi web berbasis **Laravel 12 (PHP MVC)** yang dirancang untuk mengelola peminjaman dan inventarisasi alat laboratorium secara efisien, transparan, dan terstruktur dengan sistem **Multi-Role (Admin Petugas Lab & User Mahasiswa)**.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 👥 Pengembang (Kelompok 6)
+Proyek Tugas Manajemen Sistem Informasi:
+* **Lian Rosyid Alamzah** (24051130084)
+* **Aditya Danu Marizta** (24051130094)
+* **Muhammad Ghafur Amanu Putra Warnada** (24051130103)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Fitur Utama
 
-## Learning Laravel
+### 1. 🛡️ Portal Admin (Petugas Laboratorium)
+* **Dashboard Statistik & Analitik**: Monitoring total barang, kategori, mahasiswa terdaftar, transaksi aktif, serta rekapitulasi denda.
+* **Manajemen Barang (CRUD)**: Pengelolaan kode alat, nama, spesifikasi, kategori, total stok, dan ketersediaan stok fisik.
+* **Manajemen Kategori**: Pengelompokan alat lab berdasarkan kategori/jenis.
+* **Verifikasi & Pengembalian Transaksi**:
+  * Pengecekan kondisi fisik barang saat kembali (Baik / Rusak).
+  * Perhitungan denda otomatis jika melewati batas toleransi pengembalian.
+  * Penambahan biaya servis/perbaikan jika alat rusak.
+  * Pengembalian stok barang secara otomatis.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 2. 🎓 Portal User (Mahasiswa)
+* **Katalog Alat Lab**: Pencarian alat berdasarkan nama/kode dan filter kategori dengan informasi ketersediaan stok *real-time*.
+* **Pengajuan Pinjaman Mandiri**: Formulir peminjaman dengan data peminjam otomatis terhubung ke akun mahasiswa yang aktif.
+* **Dashboard & Riwayat Pinjaman**: Memantau status pengajuan, batas waktu peminjaman, serta rincian biaya denda/servis jika ada.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## ⚖️ Aturan Bisnis (Business Rules)
+1. **Denda Keterlambatan**: Keterlambatan pengembalian lebih dari 3 hari dari tanggal rencana kembali dikenakan denda sebesar **Rp2.000 / hari**.
+2. **Biaya Kerusakan**: Pengembalian alat dalam kondisi rusak dikenakan biaya perbaikan tetap sebesar **Rp10.000**.
+3. **Kalkulasi Otomatis**: Seluruh kalkulasi denda dihitung otomatis oleh sistem pada controller sehingga meminimalkan *human error*.
+4. **Validasi Stok Real-time**: Stok alat otomatis berkurang saat dipinjam dan bertambah kembali ketika proses pengembalian selesai diverifikasi admin.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## 🛠️ Teknologi yang Digunakan
+* **Backend**: Laravel 12 (PHP MVC Framework)
+* **Database**: MySQL / MariaDB
+* **Frontend**: Blade Templating, Bootstrap 5, Custom Responsive Dark UI
+* **Tools**: Composer, Git
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 💻 Panduan Instalasi & Menjalankan Proyek
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Clone Repositori
+```bash
+git clone https://github.com/<username>/<repo-name>.git
+cd Project-Pinjaman-Alat-Laboratorium-main
+```
 
-## Code of Conduct
+### 2. Install Dependensi
+```bash
+composer install
+npm install && npm run build
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 3. Konfigurasi Lingkungan (.env)
+Salin `.env.example` menjadi `.env`:
+```bash
+cp .env.example .env
+```
+Sesuaikan konfigurasi database Anda di file `.env`:
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=db_peminjaman_lab
+DB_USERNAME=root
+DB_PASSWORD=
+```
 
-## Security Vulnerabilities
+Generate application key:
+```bash
+php artisan key:generate
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4. Migrasi & Seeder Database
+Jalankan migrasi beserta data awal (termasuk akun uji coba):
+```bash
+php artisan migrate:fresh --seed
+```
 
-## License
+### 5. Jalankan Server
+```bash
+php artisan serve
+```
+Akses aplikasi melalui browser di: `http://127.0.0.1:8000`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+## 🔑 Akun Demo Pengujian
+
+| Peran | Username / NIM | Password | Keterangan |
+|---|---|---|---|
+| **Admin** | `admin` | `admin123` | Petugas Lab (Akses Penuh) |
+| **Mahasiswa** | `24051130084` / `24051130094` / `24051130103` | `123456` | Akun Mahasiswa |
